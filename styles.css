@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --Azul-oscuro: #1B325F;
+  --Azul-claro: #9CC4E4;
+  --Blanco-azulado: #E9F2F9;
+  --Azul-medio: #3A89C9;
+  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Reset de estilos */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  /* Fondo general de la página */
+  background-color: var(--Azul-oscuro); 
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* El cuadro blanco que diferencia el contenido del fondo de la página */
+.contenedor {
+  background-color: white;
+  width: 100%;
+  max-width: 400px;
+  padding: 35px 20px;
+  border-radius: 25px;
+  box-shadow: 0px 10px 25px rgba(27, 50, 95, 0.15); /* Sombra usando tu azul oscuro */
+  text-align: center;
+}
+
+/* --- Logo y Titulo --- */
+.title {
+  margin-bottom: 30px;
+}
+
+.title img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid var(--Azul-medio);
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+
+.title h1 {
+  font-size: 1.5rem;
+  color: var(--Azul-oscuro);
+}
+
+.title h3{
+  font-size: 1rem;
+  color: var(--Azul-medio);
+}
+
+/* --- Contenedor de links --- */
+.container-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espaciado entre botones */
+}
+
+/* Card de Link */
+.link-card {
+  background-color: var(--Blanco-azulado);
+  border: 1px solid var(--Azul-claro);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  overflow: hidden; /* Para que el link ocupe los bordes redondeados */
+}
+
+.link-card:hover {
+  background-color: var(--Azul-claro);
+  transform: translateY(-2px);
+}
+
+/* Estilo del enlace que ocupa todo el ancho */
+.main-link {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: var(--Azul-oscuro);
+  font-weight: 600;
+}
+
+.main-link i {
+  font-size: 1.4rem;
+  margin-right: 15px;
+  color: var(--Azul-medio);
+}
+
+.main-link p {
+  margin: 0;
+}
+
+/* Botón de compartir */
+.btn-share {
+  background: none;
+  border: none;
+  color: var(--Azul-oscuro);
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.btn-share:hover {
+  opacity: 1;
+  color: var(--Azul-medio);
+}
+
+/* Ajustes Mobile First: En pantallas pequeñas el contenedor ocupa casi todo el ancho */
+@media (max-width: 480px) {
+  .contenedor {
+    margin-top: 20px;
+    padding: 30px 15px;
+  }
+}
