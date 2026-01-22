@@ -20,8 +20,9 @@ body {
   /* Fondo general de la página */
   background-color: var(--Azul-oscuro); 
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   min-height: 100vh;
   padding: 40px 20px;
 }
@@ -120,6 +121,19 @@ body {
 .btn-share:hover {
   opacity: 1;
   color: var(--Azul-medio);
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px; /* Espacio entre el cuadro blanco y el copyright */
+  padding: 10px;
+}
+
+footer p {
+  color: var(--Blanco-azulado); /* Usamos tu variable de color claro */
+  font-size: 0.85rem;
+  opacity: 0.8;
 }
 
 /* Ajustes Mobile First: En pantallas pequeñas el contenedor ocupa casi todo el ancho */
