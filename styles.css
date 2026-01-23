@@ -5,7 +5,8 @@
   --Azul-claro: #9CC4E4;
   --Blanco-azulado: #E9F2F9;
   --Azul-medio: #3A89C9;
-  --font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font:  "Manrope", sans-serif;
+  --botones: #137fec;
 }
 
 /* Reset de estilos */
@@ -18,7 +19,7 @@
 body {
   font-family: var(--font);
   /* Fondo general de la página */
-  background-color: var(--Azul-oscuro); 
+  background-color: var(--Blanco-azulado); 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,12 +30,11 @@ body {
 
 /* El cuadro blanco que diferencia el contenido del fondo de la página */
 .contenedor {
-  background-color: white;
   width: 100%;
   max-width: 400px;
   padding: 35px 20px;
   border-radius: 25px;
-  box-shadow: 0px 10px 25px rgba(27, 50, 95, 0.15); /* Sombra usando tu azul oscuro */
+   /* Sombra usando tu azul oscuro */
   text-align: center;
 }
 
@@ -53,13 +53,15 @@ body {
 }
 
 .title h1 {
-  font-size: 1.5rem;
-  color: var(--Azul-oscuro);
+  font-size: 1.8rem;
+  color: black;
+  
 }
 
 .title h3{
-  font-size: 1rem;
-  color: var(--Azul-medio);
+  font-size: 0.9rem;
+  color: black;
+  font-weight: 400; /* Aquí ajustas el grosor */
 }
 
 /* --- Contenedor de links --- */
@@ -70,15 +72,19 @@ body {
 }
 
 /* Card de Link */
+
 .link-card {
-  background-color: var(--Blanco-azulado);
+  background-color: var(--Azul-oscuro);
   border: 1px solid var(--Azul-claro);
   border-radius: 12px;
   display: flex;
   align-items: center;
   transition: all 0.3s ease;
   overflow: hidden; /* Para que el link ocupe los bordes redondeados */
+  box-shadow: 0px 10px 25px rgba(27, 50, 95, 0.15);
 }
+
+
 
 .link-card:hover {
   background-color: var(--Azul-claro);
@@ -92,14 +98,14 @@ body {
   flex-grow: 1;
   padding: 15px 20px;
   text-decoration: none;
-  color: var(--Azul-oscuro);
+  color: white;
   font-weight: 600;
 }
 
 .main-link i {
   font-size: 1.4rem;
   margin-right: 15px;
-  color: var(--Azul-medio);
+  color: white;
 }
 
 .main-link p {
@@ -110,7 +116,7 @@ body {
 .btn-share {
   background: none;
   border: none;
-  color: var(--Azul-oscuro);
+  color: white;
   padding: 0 15px;
   cursor: pointer;
   font-size: 1rem;
@@ -123,17 +129,36 @@ body {
   color: var(--Azul-medio);
 }
 
+
+#cotiza-link{
+  background-color: var(--botones);
+
+}
+
+#cotiza-link i {
+  color: white;
+}
+
+#cotiza-link p{
+  color: white;
+}
+#cotiza-link:hover{
+  opacity: 1;
+  background-color: var(--botones);
+}
+
 footer {
   width: 100%;
   text-align: center;
-  margin-top: 20px; /* Espacio entre el cuadro blanco y el copyright */
+  /* margin-top: px; Espacio entre el cuadro blanco y el copyright */
   padding: 10px;
 }
 
 footer p {
-  color: var(--Blanco-azulado); /* Usamos tu variable de color claro */
+  color: black; /* Usamos tu variable de color claro */
   font-size: 0.85rem;
   opacity: 0.8;
+  font-weight: 100;
 }
 
 /* Ajustes Mobile First: En pantallas pequeñas el contenedor ocupa casi todo el ancho */
