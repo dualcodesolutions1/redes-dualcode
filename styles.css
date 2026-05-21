@@ -1,15 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
-  --Azul-oscuro: #1B325F;
-  --Azul-claro: #9CC4E4;
-  --Blanco-azulado: #E9F2F9;
-  --Azul-medio: #3A89C9;
-  --font:  "Manrope", sans-serif;
-  --botones: #137fec;
+  --azul-oscuro: #0d1b35;
+  --azul-medio: #1a2f5e;
+  --azul-acento: #3A89C9;
+  --azul-boton: #1662c4;
+  --blanco: #ffffff;
+  --font: 'Manrope', sans-serif;
 }
 
-/* Reset de estilos */
 * {
   margin: 0;
   padding: 0;
@@ -18,153 +17,306 @@
 
 body {
   font-family: var(--font);
-  /* Fondo general de la página */
-  background-color: var(--Blanco-azulado); 
+  background-color: #0a1628;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
   padding: 40px 20px;
 }
 
-/* El cuadro blanco que diferencia el contenido del fondo de la página */
-.contenedor {
+/* Fondo con destellos */
+.page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.page::before {
+  content: '';
+  position: fixed;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-60%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(55,138,221,0.12) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.page::after {
+  content: '';
+  position: fixed;
+  bottom: -100px;
+  right: 50%;
+  transform: translateX(60%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(29,158,117,0.10) 0%, transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Wrapper central */
+.wrapper {
   width: 100%;
   max-width: 400px;
-  padding: 35px 20px;
-  border-radius: 25px;
-   /* Sombra usando tu azul oscuro */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Encabezado --- */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
   text-align: center;
 }
 
-/* --- Logo y Titulo --- */
-.title {
-  margin-bottom: 30px;
+.badge {
+  background: rgba(55,138,221,0.15);
+  border: 0.5px solid rgba(55,138,221,0.35);
+  color: #85b7eb;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
 }
 
-.title img {
-  width: 90px;
-  height: 90px;
+.logo-wrap {
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
-  border: 3px solid var(--Azul-medio);
-  margin-bottom: 15px;
-  object-fit: cover;
-}
-
-.title h1 {
-  font-size: 1.8rem;
-  color: black;
-  
-}
-
-.title h3{
-  font-size: 0.9rem;
-  color: black;
-  font-weight: 400; /* Aquí ajustas el grosor */
-}
-
-/* --- Contenedor de links --- */
-.container-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px; /* Espaciado entre botones */
-}
-
-/* Card de Link */
-
-.link-card {
-  background-color: var(--Azul-oscuro);
-  border: 1px solid var(--Azul-claro);
-  border-radius: 12px;
+  background: linear-gradient(135deg, #1B325F, #3A89C9);
   display: flex;
   align-items: center;
-  transition: all 0.3s ease;
-  overflow: hidden; /* Para que el link ocupe los bordes redondeados */
-  box-shadow: 0px 10px 25px rgba(27, 50, 95, 0.15);
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 0 0 6px rgba(58,137,201,0.12), 0 0 0 14px rgba(58,137,201,0.05);
 }
 
+.logo-inner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: #fff;
+}
 
+.brand-name {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 4px;
+}
 
-.link-card:hover {
-  background-color: var(--Azul-claro);
+.brand-name span {
+  color: var(--azul-acento);
+}
+
+.company-name {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.35);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.45);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* --- Links --- */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Card base */
+.card {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.05);
+  border: 0.5px solid rgba(255,255,255,0.09);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  text-decoration: none;
+}
+
+.card:hover {
+  background: rgba(255,255,255,0.09);
+  border-color: rgba(255,255,255,0.18);
   transform: translateY(-2px);
 }
 
-/* Estilo del enlace que ocupa todo el ancho */
-.main-link {
+/* Card CTA principal */
+.card.accent {
+  background: linear-gradient(135deg, #1662c4, #3A89C9);
+  border-color: rgba(58,137,201,0.4);
+}
+
+.card.accent:hover {
+  background: linear-gradient(135deg, #1a6dd4, #4293d9);
+  transform: translateY(-2px);
+}
+
+/* Card con botón compartir */
+.link-card {
   display: flex;
   align-items: center;
-  flex-grow: 1;
-  padding: 15px 20px;
+}
+
+.card-link {
+  display: flex;
+  align-items: center;
+  flex: 1;
   text-decoration: none;
-  color: white;
+}
+
+/* Ícono */
+.card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 20px;
+  color: rgba(255,255,255,0.75);
+}
+
+.instagram-icon { color: #e879a0; }
+.cotiza-icon    { color: #63e29d; }
+
+.card.accent .card-icon {
+  color: rgba(255,255,255,0.9);
+}
+
+/* Texto */
+.card-body {
+  flex: 1;
+  padding: 14px 4px;
+}
+
+.card-title {
+  font-size: 0.9rem;
   font-weight: 600;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 2px;
 }
 
-.main-link i {
-  font-size: 1.4rem;
-  margin-right: 15px;
-  color: white;
+.card-sub {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.4);
+  font-weight: 400;
 }
 
-.main-link p {
-  margin: 0;
+.card.accent .card-sub {
+  color: rgba(255,255,255,0.65);
 }
 
-/* Botón de compartir */
+/* Flecha CTA */
+.card-arrow {
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.35);
+  font-size: 15px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.card.accent:hover .card-arrow {
+  color: rgba(255,255,255,0.85);
+  transform: translateX(3px);
+}
+
+/* Botón compartir */
 .btn-share {
   background: none;
   border: none;
-  color: white;
-  padding: 0 15px;
+  border-left: 0.5px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.3);
+  width: 44px;
+  height: 100%;
+  min-height: 56px;
   cursor: pointer;
-  font-size: 1rem;
-  opacity: 0.6;
-  transition: opacity 0.3s;
+  font-size: 14px;
+  transition: color 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-share:hover {
-  opacity: 1;
-  color: var(--Azul-medio);
+  color: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.06);
 }
 
-
-#cotiza-link{
-  background-color: var(--botones);
-
+/* Divisor */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0;
 }
 
-#cotiza-link i {
-  color: white;
+.divider-line {
+  flex: 1;
+  height: 0.5px;
+  background: rgba(255,255,255,0.07);
 }
 
-#cotiza-link p{
-  color: white;
-}
-#cotiza-link:hover{
-  opacity: 1;
-  background-color: var(--botones);
+.divider-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.2);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
+/* Footer */
 footer {
-  width: 100%;
+  margin-top: 28px;
   text-align: center;
-  /* margin-top: px; Espacio entre el cuadro blanco y el copyright */
-  padding: 10px;
+  position: relative;
+  z-index: 1;
 }
 
 footer p {
-  color: black; /* Usamos tu variable de color claro */
-  font-size: 0.85rem;
-  opacity: 0.8;
-  font-weight: 100;
+  font-family: var(--font);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.18);
+  font-weight: 400;
 }
 
-/* Ajustes Mobile First: En pantallas pequeñas el contenedor ocupa casi todo el ancho */
+/* Mobile */
 @media (max-width: 480px) {
-  .contenedor {
-    margin-top: 20px;
-    padding: 30px 15px;
+  .wrapper {
+    padding: 0 4px;
   }
 }

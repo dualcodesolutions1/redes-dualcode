@@ -1,63 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/aa8511d0f3.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="styles.css">
-  <title>DualCode Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/aa8511d0f3.js" crossorigin="anonymous"></script>
+  <title>ReservAR — DualCode Solutions</title>
   <link rel="icon" type="image/x-icon" href="img/DevCode logo.png">
   <meta name="google-site-verification" content="tZxAoY2PXN3_qakJY1cVBL7gCufaA7vsOQ9oIvcN21k" />
 </head>
-
 <body>
 
-  <div class="contenedor">
-    <!-- Logo y Titulo -->
-    <div class="title">
-      <img src="img/DevCode logo.png" alt="DualCode-Logo">
-      <h1>DualCode Solutions</h1>
-      <h3>Transformamos tus ideas en soluciones digitales</h3>
+  <div class="page">
+
+    <div class="wrapper">
+
+      <!-- Encabezado -->
+      <div class="header">
+        <span class="badge">Sistema de reservas online</span>
+
+        <div class="logo-wrap">
+          <div class="logo-inner">
+            <i class="fa-solid fa-calendar-check"></i>
+          </div>
+        </div>
+
+        <h1 class="brand-name">Reserv<span>AR</span></h1>
+        <p class="company-name">por DualCode Solutions</p>
+        <p class="tagline">Gestioná tus reservas de forma simple,<br>rápida y profesional.</p>
+      </div>
+
+      <!-- Links -->
+      <div class="links">
+
+        <!-- CTA principal -->
+        <a href="https://www.dualcode.com.ar" target="_blank" class="card accent">
+          <div class="card-icon"><i class="fa-solid fa-rocket"></i></div>
+          <div class="card-body">
+            <div class="card-title">Probar ReservAR gratis</div>
+            <div class="card-sub">Comenzá sin tarjeta de crédito</div>
+          </div>
+          <div class="card-arrow"><i class="fa-solid fa-arrow-right"></i></div>
+        </a>
+
+        <div class="divider">
+          <div class="divider-line"></div>
+          <span class="divider-label">más info</span>
+          <div class="divider-line"></div>
+        </div>
+
+        <!-- Sitio web -->
+        <div class="link-card card" id="web-card">
+          <a href="https://www.dualcode.com.ar" target="_blank" class="card-link">
+            <div class="card-icon"><i class="fa-solid fa-globe"></i></div>
+            <div class="card-body">
+              <div class="card-title">Sitio web</div>
+              <div class="card-sub">dualcode.com.ar</div>
+            </div>
+          </a>
+          <button class="btn-share" aria-label="Compartir enlace"><i class="fa-solid fa-share"></i></button>
+        </div>
+
+        <!-- Instagram -->
+        <div class="link-card card" id="instagram-card">
+          <a href="https://www.instagram.com/dualcode.ar/" target="_blank" class="card-link">
+            <div class="card-icon instagram-icon"><i class="fa-brands fa-instagram"></i></div>
+            <div class="card-body">
+              <div class="card-title">Instagram</div>
+              <div class="card-sub">@dualcode.ar</div>
+            </div>
+          </a>
+          <button class="btn-share" aria-label="Compartir enlace"><i class="fa-solid fa-share"></i></button>
+        </div>
+
+        <!-- Cotizar -->
+        <div class="link-card card" id="cotiza-card">
+          <a href="mailto:dualcodesolutions@gmail.com?subject=Cotizar Proyecto&body=Hola, me gustaría cotizar mi proyecto!" class="card-link">
+            <div class="card-icon cotiza-icon"><i class="fa-solid fa-message"></i></div>
+            <div class="card-body">
+              <div class="card-title">Cotizar proyecto</div>
+              <div class="card-sub">Hablemos de tu idea</div>
+            </div>
+          </a>
+          <button class="btn-share" aria-label="Compartir enlace"><i class="fa-solid fa-share"></i></button>
+        </div>
+
+      </div>
     </div>
 
-    <!-- Contenedor de links -->
-    <div class="container-links">
-      <!-- Link 3 -->
-      <div id="cotiza-link" class="link-card">
-        <a href="mailto:dualcodesolutions@gmail.com?subject=Cotizar Proyecto&body=Hola, me gustaría cotizar mi proyecto!"
-          class="main-link">
-          <i class="fa-solid fa-rocket"></i>
-          <p>Cotizar Proyecto</p>
-        </a>
-        <button class="btn-share"><i class="fa-solid fa-arrow-right"></i></i></button>
-      </div>
-      <!-- Link 2 -->
-      <div class="link-card">
-        <a href="https://www.dualcode.com.ar" target="_blank" class="main-link">
-          <i class="fa-solid fa-globe"></i>
-          <p>Sitio Web</p>
-        </a>
-        <button class="btn-share"><i class="fa-solid fa-share"></i></button>
-      </div>
-      <!-- Link 1 -->
-      <div class="link-card">
-        <a href="https://www.instagram.com/dualcode.ar/" target="_blank" class="main-link">
-          <i class="fa-brands fa-instagram"></i>
-          <p>Instagram</p>
-        </a>
-        <button class="btn-share"><i class="fa-solid fa-share"></i></button>
-      </div>
-    </div>
-  </div>
-  </div>
-  <footer>
-    <p>
-      &copy; 2026 <strong>DualCode Solutions</strong>.
-    </p>
-  </footer>
-</body>
-</body>
-<script src="app.js"></script>
+    <footer>
+      <p>© 2026 <strong>DualCode Solutions</strong></p>
+    </footer>
 
+  </div>
+
+  <script src="app.js"></script>
+</body>
 </html>
